@@ -1,0 +1,420 @@
+.complaint-submit-container {
+  max-width: 1100px;
+  margin: -3rem auto 0;
+  padding: 2rem;
+}
+
+.complaint-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.complaint-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
+  transform: translateX(-15px); /* Nudge slightly to the left */
+}
+
+.complaint-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.complaint-form {
+  /* Glass applied */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* border-top removed per request */
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.4);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.form-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.form-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #000000;
+  caret-color: #000000;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #ffda79;
+  box-shadow: 0 0 0 3px rgba(255, 218, 121, 0.3);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-help {
+  color: #444;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Location Preview Styles */
+.location-preview-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+}
+
+.preview-map {
+  height: 250px;
+  width: 100%;
+}
+
+.geocoding-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: white;
+  gap: 1rem;
+}
+
+.small-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #00d2ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Image Upload Styles */
+.image-upload-area {
+  margin-bottom: 1.5rem;
+}
+
+.image-input {
+  display: none;
+}
+
+.image-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  border: 2px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.image-upload-label:hover {
+  border-color: #ffda79;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.15));
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.image-upload-label span {
+  font-weight: 600;
+  color: #1a1a1a;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.image-upload-label small {
+  color: #444;
+  font-size: 0.85rem;
+}
+
+/* AI Vision Scanner */
+.image-preview {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.ai-scanner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 206, 201, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.laser-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #00cec9;
+  box-shadow: 0 0 15px #00cec9, 0 0 30px #00cec9;
+  z-index: 11;
+  animation: laserScan 2s ease-in-out infinite;
+}
+
+@keyframes laserScan {
+  0% { top: 0%; opacity: 0.5; }
+  50% { top: 100%; opacity: 1; }
+  100% { top: 0%; opacity: 0.5; }
+}
+
+.scan-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #00cec9;
+  text-shadow: 0 0 5px #00cec9;
+  letter-spacing: 2px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+
+/* AI Analysis Results */
+.ai-results {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 206, 201, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.ai-header h4 {
+  margin: 0;
+  color: #00cec9;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brain-icon { font-size: 1.3rem; }
+
+.ai-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.ai-tag-pill {
+  background: rgba(0, 206, 201, 0.15);
+  border: 1px solid rgba(0, 206, 201, 0.4);
+  color: #00cec9;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: capitalize;
+}
+
+.ai-tag-pill small {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.7rem;
+}
+
+.ai-disclaimer {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  margin: 0;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 107, 107, 0.9);
+  color: #1a1a1a;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.remove-image-btn:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+}
+
+/* Form Actions */
+.form-actions {
+  grid-column: span 2;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit-btn .loading {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .complaint-submit-container {
+    padding: 1rem;
+  }
+  
+  .complaint-form {
+    padding: 1.5rem;
+  }
+  
+  .complaint-header h1 {
+    font-size: 2rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-preview-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .image-preview img {
+    height: 120px;
+  }
+}
+
+/* Validation Error Styles */
+.form-input.is-invalid,
+.form-textarea.is-invalid {
+  border-color: #ff6b6b !important;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2) !important;
+  background: rgba(255, 255, 255, 1);
+}
+
+.field-error {
+  color: #ff5252;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  text-shadow: 0 0 10px rgba(255, 82, 82, 0.3);
+  animation: fadeIn 0.3s ease-out;
+}
